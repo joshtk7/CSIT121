@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #d3d3d3;
+}
+
+tr.tier-s td {
+  background-color: #00bfff;
+}
+
+tr.tier-a td {
+  background-color: #00cc00;
+}
+
+tr.tier-b td {
+  background-color: #ffff66;
+}
+
+tr.tier-c td {
+  background-color: #ffcc00;
+}
+
+tr.tier-d td {
+  background-color: #ff6600;
+}
+
+img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid black;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
