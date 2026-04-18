@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="tierlist.html">Tier List</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>FPS Games Survey</h1>
+
+  <form action="" method="post" aria-label="Survey Form">
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required aria-required="true">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required aria-required="true">
+    </div>
+
+    <div>
+      <label for="comment">Comments:</label>
+      <textarea id="comment" name="comment"></textarea>
+    </div>
+
+    <div>
+      <label for="favorite">What is your favorite FPS game?</label>
+      <select id="favorite" name="favorite">
+        <option value="">-- Select a game --</option>
+        <option value="valorant">Valorant</option>
+        <option value="csgo">CS2</option>
+        <option value="halo">Halo</option>
+        <option value="fortnite">Fortnite</option>
+        <option value="cod">Call of Duty</option>
+        <option value="battlefield">Battlefield</option>
+        <option value="r6">Rainbow Six Siege</option>
+        <option value="l4d">Left 4 Dead</option>
+        <option value="battlefront">Battlefront</option>
+      </select>
+    </div>
+
+    <div>
+      <p>Do you prefer playing by yourself or with others?</p>
+      <label><input type="radio" name="playstyle" value="solo"> Solo</label>
+      <label><input type="radio" name="playstyle" value="team"> With a Team</label>
+      <label><input type="radio" name="playstyle" value="both"> Both</label>
+    </div>
+
+    <div>
+      <p>What do you play on?</p>
+      <label><input type="checkbox" name="platform" value="pc"> PC</label>
+      <label><input type="checkbox" name="platform" value="xbox"> Xbox</label>
+      <label><input type="checkbox" name="platform" value="playstation"> PlayStation</label>
+    </div>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+</body>
+</html>
