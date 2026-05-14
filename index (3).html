@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDF Canonicalization — What Is It?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header>
+      <a class="site-title" href="index.html">RDF Canonicalization</a>
+      <nav>
+        <a href="index.html" class="active">What Is It?</a>
+        <a href="why.html">Why It Matters</a>
+        <a href="how.html">How It's Used</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="label">W3C Web Standard · RDF-Canon</span>
+        <h1>What Is RDF Canonicalization?</h1>
+      </section>
+
+      <section>
+        <h2>What is RDF?</h2>
+        <p>
+          RDF stands for Resource Description Framework. It is a W3C standard for representing information on the web using structured statements called triples, each consisting of a subject, a predicate, and an object. Those triples are grouped into an RDF dataset. RDF is a core part of the Semantic Web, which is the push to structure data on the internet so that machines can read and process it, not just humans.
+        </p>
+        <p>
+          The issue with RDF datasets is that the same data can look completely different depending on how it was written or where it came from. Two datasets can describe the same information but differ in formatting, ordering, or labels on certain nodes. That becomes a problem the moment you try to do anything security-related with the data, because even a small formatting difference will break a digital signature.
+        </p>
+        <p>
+          RDF also uses something called blank nodes. These are resources within a dataset that lack a permanent identifier. They get assigned random local labels when the data is created, so two copies of the same dataset might label the same blank node differently. Without a way to standardize those labels, comparing or signing datasets is unreliable.
+        </p>
+
+        <h2>What is Canonicalization?</h2>
+        <p>
+          Canonicalization is just converting data into one standard form. RDF Canonicalization, also called RDF-Canon or RDNA, is the W3C specification that defines how to do that for RDF datasets. No matter what the dataset looks like when it comes in, the algorithm produces the same output if the data is logically the same.
+        </p>
+        <p>
+          It handles blank nodes by examining the graph structure around each one and computing a hash-based label to replace the original random identifier. Once every blank node has a stable label, the full dataset is serialized in N-Quads format, and each line is sorted alphabetically. The result is always the same, byte-for-byte, for equivalent data, which is what makes it safe to sign.
+        </p>
+        <p>
+          The W3C published RDF Dataset Canonicalization as a Candidate Recommendation in 2023. That means it went through formal review and is stable enough for real implementations. Multiple independent libraries have already built it in, and there is an official test suite they all have to pass.
+        </p>
+
+        <h2>Key Properties</h2>
+        <p>
+          The algorithm is deterministic, meaning the same input always produces the same output on any machine. It is also bijective, meaning there is a one-to-one relationship between a dataset and its canonical form, and nothing gets lost or changed in the process. Both of those things together are what make it useful for cryptography. You need guaranteed consistency before signing anything if you expect the signature to hold up.
+        </p>
+        <p>
+          The working group also prioritized scalability. Earlier attempts at RDF normalization worked on small datasets but fell apart on larger, more complex ones, especially with deeply nested blank node structures. RDF-Canon was built to handle real-world data from the start.
+        </p>
+        <p>
+          Most people will never interact with this standard directly. But it is what makes higher-level things like signed credentials and verifiable data on the web actually work behind the scenes.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+       <p>CSIT 121 - Lab 10</p>
+    </footer>
+  </div>
+</body>
+</html>
